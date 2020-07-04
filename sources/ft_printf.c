@@ -6,7 +6,7 @@
 /*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:40:07 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/03 17:16:42 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/04 21:25:09 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int	ft_viev_input(const char *input, va_list av)
 	{
 		if (input[i] == '%' && input[i + 1] == '\0')
 			return (-1);
-		if (input[i] == '%' && ft_valid_type(input[i + i]))
+		if (input[i] == '%' && ft_valid_type(input[i + 1]))
 		{
 			count += ft_what_is_it(input[i + 1], av);
+			i++;
 		}
 		else if(input[i] != '%')
 			ft_putchar(input[i]);
@@ -34,7 +35,7 @@ int	ft_viev_input(const char *input, va_list av)
 	return (count);
 }
 
-int	ft_prinf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int count;
 	va_list av;

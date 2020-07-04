@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1260b4c7-d57b-4c6d-9cea-0ed13429fc23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_atoi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libftprintf.a" beforeDir="false" afterPath="$PROJECT_DIR$/libftprintf.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/ft_printf.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,10 +51,26 @@
       <option name="presentableId" value="Default" />
       <updated>1592299033334</updated>
       <workItem from="1592299045544" duration="161000" />
+      <workItem from="1593872812527" duration="854000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/libft" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1089" y="489" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593873817261">
+      <screen x="0" y="23" width="2560" height="1366" />
+    </state>
+    <state x="1089" y="489" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1366@0.23.2560.1366" timestamp="1593873817261" />
+    <state x="877" y="319" key="SettingsEditor" timestamp="1593873875709">
+      <screen x="0" y="23" width="2560" height="1366" />
+    </state>
+    <state x="877" y="319" key="SettingsEditor/0.23.2560.1366@0.23.2560.1366" timestamp="1593873875709" />
   </component>
 </project>

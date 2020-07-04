@@ -6,7 +6,7 @@
 /*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:06:38 by csnowbal          #+#    #+#             */
-/*   Updated: 2020/07/04 17:22:06 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/04 21:15:48 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,16 @@
 int		main(void)
 {
 	int x;
-	x = 1;
-	printf("hello %d\n", x);
-	ft_printf("hello %d\n", x);
+	char c;
+	char *str;
+	str = "Happy New";
+	c = 'x';
+	x = 2020;
+	printf("Now %d year\n", x);
+	ft_printf("Now %d year\n", x);
+	printf("Now %s year\n", str);
+	ft_printf("Now %s year\n", str);
+	printf("Now %c year\n", c);
+	ft_printf("Now %c year\n", c);
 	return (0);
 }
