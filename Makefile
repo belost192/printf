@@ -6,7 +6,7 @@
 #    By: chnikia <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/28 13:40:29 by chnikia           #+#    #+#              #
-#    Updated: 2020/07/04 21:09:18 by chnikia          ###   ########.fr        #
+#    Updated: 2020/07/08 18:29:01 by chnikia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRCS = sources/ft_what_is_it.c \
 		sources/ft_view_str.c\
 		sources/ft_view_char.c\
 		sources/ft_putchar.c\
-		sources/ft_putstr.c
+		sources/ft_putstr.c\
+		sources/ft_view_uint.c\
+		sources/ft_viev_hex.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
