@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 18:08:59 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/08 17:38:45 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/11 23:04:28 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,20 @@ char	*ft_unsigned_itoa(unsigned int n)
 		nbr /= 10;
 	}
 	return (str);
+}
+
+int ft_write_right(int wigth, int minus)
+{
+	int count;
+
+	count = 0;
+	if (minus == 1)
+	{
+		while(t_flags.width > 0)
+		{
+			count += ft_putchar(' ');
+			wigth--;
+		}
+	}
+	return (count);
 }

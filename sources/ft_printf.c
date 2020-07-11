@@ -3,31 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:40:07 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/04 21:25:09 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/11 23:47:41 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+// '-' по правому краю
+// 'int' ширина
+// *
+t_flags ft_init_flags(void)
+{
+t_flags flags;
+flags.minus = 0;
+flags.zero = 0;
+flags.star = 0;
+flags.dot = -1;
+flags.type = 0;
+flags.width = 0;
+return (flags);
+}
+
+
+int	ft_viev_scan(int i, va_list av, t_flags *flags, char *input)
+{
+	while(input[i])
+	{
+		if (input[i] == '-')
+				*flags = ft_flag_minus(*flags);
+		if (ft_isdigit(input[i]))
+				*flags =  ft_viev_digit(input[i], flags);
+		if (ft_valid_type(input[i]))
+				flags->type = input[i];
+		i++;
+	}
+	return (i);
+}
 
 int	ft_viev_input(const char *input, va_list av)
 {
 	int	i;
 	int count;
+	t_flags flags;
 
 	i = 0;
 	count = 0;
 	while (input[i])
 	{
+		flags = ft_init_flags();
 		if (input[i] == '%' && input[i + 1] == '\0')
 			return (-1);
-		if (input[i] == '%' && ft_valid_type(input[i + 1]))
-		{
-			count += ft_what_is_it(input[i + 1], av);
-			i++;
-		}
+		if (input[i] == '%' && input[i + 1])
+			{
+				i++;
+				i = ft_viev_scan(i, av, &flags, input);
+				if (ft_valid_type(input[i]))
+				{
+					count += ft_what_is_it(input[i + 1], av, flags);
+					i++;
+				}
+			}
 		else if(input[i] != '%')
 			ft_putchar(input[i]);
 		i++;
@@ -48,3 +85,4 @@ int	ft_printf(const char *str, ...)
 	va_end(av);
 	return(count);
 }
+

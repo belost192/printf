@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_view_char.c                                     :+:      :+:    :+:   */
+/*   ft_flag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 20:57:49 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/11 23:05:41 by chnikia          ###   ########.fr       */
+/*   Created: 2020/07/11 21:52:42 by chnikia           #+#    #+#             */
+/*   Updated: 2020/07/11 23:44:49 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int ft_view_char(int c, t_flags flags)
+t_flags	ft_viev_digit(char width, t_flags flags,)
 {
-	int count;
+	flags.width = (flags.width * 10) + (width + 48);
+return (flags);
+}
 
-	count = 0;
-	if(flags.flag_minus == 1)
-	{
-		ft_write_right(flags.width, 1);
-	}
-	count += ft_putchar(c);
-	return (count);
+t_flags	ft_flag_minus(t_flags flags)
+{
+	flags.minus = 1;
+	flags.zero = 0;
+	return (flags);
 }

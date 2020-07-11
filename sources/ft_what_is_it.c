@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_what_is_it.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 18:20:06 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/08 18:26:38 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/11 23:18:45 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_valid_type(int c)
 			|| (c == 'u') || (c == 'x') || (c == 'X') || (c == '%'));
 }
 
-int	ft_what_is_it(int c, va_list av)
+int	ft_what_is_it(int c, va_list av, t_flags flags)
 {
 	int count;
 
@@ -26,7 +26,7 @@ int	ft_what_is_it(int c, va_list av)
 	if (c == 'd')
 		count += ft_view_int(va_arg(av, int));
 	else if (c == 'c')
-		count += ft_view_char(va_arg(av, int));
+		count += ft_view_char(va_arg(av, int), flags);
 	else if (c == 's')
 		count += ft_view_str(va_arg(av, char *));
 	else if (c == 'u')

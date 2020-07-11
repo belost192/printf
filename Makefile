@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chnikia <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/28 13:40:29 by chnikia           #+#    #+#              #
-#    Updated: 2020/07/08 18:29:01 by chnikia          ###   ########.fr        #
+#    Updated: 2020/07/11 23:08:26 by chnikia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS = sources/ft_what_is_it.c \
 		sources/ft_putchar.c\
 		sources/ft_putstr.c\
 		sources/ft_view_uint.c\
-		sources/ft_viev_hex.c
+		sources/ft_viev_hex.c\
+		sources/ft_flag.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
