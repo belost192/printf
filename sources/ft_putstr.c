@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 18:08:59 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/11 23:04:28 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/14 21:48:56 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,32 @@ char	*ft_unsigned_itoa(unsigned int n)
 	return (str);
 }
 
-int ft_write_right(int wigth, int minus)
+int ft_write_right_left(int wigth, int dot, int len, int minus, int zero)
 {
 	int count;
+	int otstyp;
+	int lol;
+
+	lol = zero;
+
 
 	count = 0;
-	if (minus == 1)
+	otstyp = wigth - dot;
+	if (dot > 1 && minus == 0)
 	{
-		while(t_flags.width > 0)
-		{
+		while ((wigth - dot) > 0)
+			{
 			count += ft_putchar(' ');
 			wigth--;
-		}
+			}
+		while((dot-- - len) > 0)
+			count += ft_putchar('0');
+	return (count);
+	}
+	else if (dot <= 0 && minus == 1)
+	{
+		while ((wigth-- - len)> 0)
+			count += ft_putchar(' ');
 	}
 	return (count);
 }

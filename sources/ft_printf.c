@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:40:07 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/11 23:47:41 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/13 15:22:48 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,25 @@ return (flags);
 }
 
 
-int	ft_viev_scan(int i, va_list av, t_flags *flags, char *input)
+int	ft_viev_scan(int i, va_list av, t_flags *flags,const char *input)
 {
 	while(input[i])
 	{
 		if (input[i] == '-')
 				*flags = ft_flag_minus(*flags);
 		if (ft_isdigit(input[i]))
-				*flags =  ft_viev_digit(input[i], flags);
+				*flags =  ft_viev_digit(input[i], *flags);
 		if (ft_valid_type(input[i]))
 				flags->type = input[i];
+		if (input[i] == '.')
+				i = ft_flag_dot(av, flags, input, i);
+		if (input[i] == '*')
+				*flags = ft_flag_star(av, *flags);
+		if (ft_valid_type(input[i]))
+			{
+				flags->type = input[i];
+				break;
+			}
 		i++;
 	}
 	return (i);
@@ -46,9 +55,7 @@ int	ft_viev_input(const char *input, va_list av)
 {
 	int	i;
 	int count;
-	t_flags flags;
-
-	i = 0;
+	t_flags flags; i = 0;
 	count = 0;
 	while (input[i])
 	{
@@ -61,8 +68,7 @@ int	ft_viev_input(const char *input, va_list av)
 				i = ft_viev_scan(i, av, &flags, input);
 				if (ft_valid_type(input[i]))
 				{
-					count += ft_what_is_it(input[i + 1], av, flags);
-					i++;
+					count += ft_what_is_it((char)flags.type, flags, av);
 				}
 			}
 		else if(input[i] != '%')
