@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:40:07 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/13 15:22:48 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/17 19:40:53 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,25 @@ return (flags);
 
 int	ft_viev_scan(int i, va_list av, t_flags *flags,const char *input)
 {
-	while(input[i])
+	while (input[i])
 	{
-		if (input[i] == '-')
-				*flags = ft_flag_minus(*flags);
-		if (ft_isdigit(input[i]))
-				*flags =  ft_viev_digit(input[i], *flags);
-		if (ft_valid_type(input[i]))
-				flags->type = input[i];
+		if (!ft_isdigit(input[i]) && !ft_valid_type(input[i]) && !ft_flags(input[i]))
+			break ;
+		if (input[i] == '0' && flags->width == 0 && flags->minus == 0)
+			flags->zero = 1;
 		if (input[i] == '.')
-				i = ft_flag_dot(av, flags, input, i);
+			i = ft_flag_dot(input, i, flags, av);
+		if (input[i] == '-')
+			*flags = ft_flag_minus(*flags);
 		if (input[i] == '*')
-				*flags = ft_flag_star(av, *flags);
+			*flags = ft_flag_width(*flags, av);
+		if (ft_isdigit(input[i]))
+			*flags = ft_flag_digit(input[i], *flags);
 		if (ft_valid_type(input[i]))
-			{
-				flags->type = input[i];
-				break;
-			}
+		{
+			flags->type = input[i];
+			break ;
+		}
 		i++;
 	}
 	return (i);

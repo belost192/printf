@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_what_is_it.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 18:20:06 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/13 15:06:40 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/17 20:46:18 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	ft_what_is_it(int c, t_flags flags, va_list av)
 	int count;
 
 	count = 0;
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 		count += ft_view_int(va_arg(av, int), flags);
 	else if (c == 'c')
 		count += ft_view_char(va_arg(av, int), flags);
 	else if (c == 's')
-		count += ft_view_str(va_arg(av, char *));
+		count += ft_str(va_arg(av, char *), flags);
 	else if (c == 'u')
 		count += ft_view_uint((unsigned int)va_arg(av, unsigned int));
 	else if (c == '%')
@@ -39,3 +39,4 @@ int	ft_what_is_it(int c, t_flags flags, va_list av)
 		count += ft_viev_hex(va_arg(av, unsigned int), 0);
 	return (count);
 }
+

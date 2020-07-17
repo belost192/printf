@@ -6,7 +6,7 @@
 #    By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/28 13:40:29 by chnikia           #+#    #+#              #
-#    Updated: 2020/07/11 23:08:26 by chnikia          ###   ########.fr        #
+#    Updated: 2020/07/17 19:01:45 by chnikia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT_DIR = ./libft
 SRCS = sources/ft_what_is_it.c \
 		sources/ft_printf.c\
 		sources/ft_view_int.c\
-		sources/ft_view_str.c\
+		sources/ft_str.c\
 		sources/ft_view_char.c\
 		sources/ft_putchar.c\
 		sources/ft_putstr.c\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_view_uint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 00:55:11 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/08 14:58:40 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/17 17:46:15 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_view_uint(unsigned int nbr)
 	int		len;
 
 	count = 0;
-	str = ft_unsigned_itoa(nbr);
+	str = ft_unsigned_itoa(nbr, 10);
 	len = ft_strlen(str);
 	count += ft_putstr(str, len);
 	return (count);
