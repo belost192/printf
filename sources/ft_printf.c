@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:40:07 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/17 19:40:53 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/20 22:31:59 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ int	ft_viev_input(const char *input, va_list av)
 				i++;
 				i = ft_viev_scan(i, av, &flags, input);
 				if (ft_valid_type(input[i]))
-				{
 					count += ft_what_is_it((char)flags.type, flags, av);
-				}
+				else if (input[i])
+					return (-1);
 			}
-		else if(input[i] != '%')
-			ft_putchar(input[i]);
+		else if (input[i] != '%')
+			count += ft_putchar(input[i]);
 		i++;
 	}
 	return (count);
@@ -91,6 +91,7 @@ int	ft_printf(const char *str, ...)
 	va_start(av, str);
 	count += ft_viev_input(input, av);
 	va_end(av);
+	free((char *)input);
 	return(count);
 }
 

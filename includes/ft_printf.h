@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/28 13:31:17 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/17 19:00:32 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/20 20:41:11 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,23 @@ int	    ft_what_is_it(int c, t_flags flags, va_list av);
 int		ft_valid_type(int c);
 
 int		ft_printf(const char *str, ...);
-int		ft_viev_input(const char *input, va_list av);
+int		ft_type_input(const char *input, va_list av);
 
-int		ft_view_int(int nbr, t_flags flags);
-int 	ft_view_char(int c, t_flags flags);
-int		ft_str(char *str, t_flags flags);
-int		ft_view_uint(unsigned int nbr);
-int		ft_viev_hex(int nbr, int upper);
-int	    ft_viev_scan(int i, va_list av, t_flags *flags,const char *input);
-t_flags ft_viev_digit(char width, t_flags flags);
+int		ft_type_int(int nbr, t_flags flags);
+int 	ft_type_char(int c, t_flags flags);
+int		ft_type_str(char *str, t_flags flags);
+int		ft_type_uint(unsigned int nbr, t_flags flags);
+int		ft_type_hex(unsigned int nbr, int x, t_flags flags);
+int	    ft_type_scan(int i, va_list av, t_flags *flags,const char *input);
+t_flags ft_type_digit(char width, t_flags flags);
+int		ft_type_ptr(unsigned long long nbr, t_flags flags);
 
 int		ft_putchar(int c);
 int		ft_putstr(char *str, int len);
 int     ft_write_right_left(int width, int minus, int zero);
 char	*ft_unsigned_itoa(unsigned long long nbr, int base);
 char	*ft_nbr_to_hex(unsigned long long nbr);
+char	*ft_str_tolower(char *str);
 
 t_flags	ft_flag_minus(t_flags flags);
 t_flags	ft_flag_star(va_list av, t_flags flags);

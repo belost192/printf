@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_view_uint.c                                     :+:      :+:    :+:   */
+/*   ft_type_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/05 00:55:11 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/17 17:46:15 by chnikia          ###   ########.fr       */
+/*   Created: 2020/07/04 20:57:49 by chnikia           #+#    #+#             */
+/*   Updated: 2020/07/20 23:10:48 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_view_uint(unsigned int nbr)
+int ft_type_char(int c, t_flags flags)
 {
-	int		count;
-	char	*str;
-	int		len;
+	int	count;
 
 	count = 0;
-	str = ft_unsigned_itoa(nbr, 10);
-	len = ft_strlen(str);
-	count += ft_putstr(str, len);
-	return (count);
+	if (flags.minus == 1)
+		ft_putchar(c);
+	count = ft_write_right_left(flags.width, 1, 0);
+	if (flags.minus == 0)
+		ft_putchar(c);
+	return (count + 1);
 }

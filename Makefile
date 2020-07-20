@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+         #
+#    By: chnikia <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/28 13:40:29 by chnikia           #+#    #+#              #
-#    Updated: 2020/07/17 19:01:45 by chnikia          ###   ########.fr        #
+#    Updated: 2020/07/20 22:32:37 by chnikia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,18 @@ LIBFT = ./libft/libft.a
 LIBFT_DIR = ./libft
 SRCS = sources/ft_what_is_it.c \
 		sources/ft_printf.c\
-		sources/ft_view_int.c\
-		sources/ft_str.c\
-		sources/ft_view_char.c\
+		sources/ft_type_int.c\
+		sources/ft_type_str.c\
+		sources/ft_type_char.c\
 		sources/ft_putchar.c\
 		sources/ft_putstr.c\
-		sources/ft_view_uint.c\
-		sources/ft_viev_hex.c\
-		sources/ft_flag.c
+		sources/ft_type_uint.c\
+		sources/ft_type_hex.c\
+		sources/ft_flag.c\
+		sources/ft_type_ptr.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 ARRC = ar rcs
 REMF = rm -rf
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 18:08:59 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/17 17:45:50 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/21 00:28:10 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_putstr(char *str, int len)
+int		ft_putstr(char *str, int len)
 {
 	int	count;
 
@@ -21,7 +21,6 @@ int	ft_putstr(char *str, int len)
 		ft_putchar(str[count++]);
 	return (count);
 }
-
 
 char	*ft_unsigned_itoa(unsigned long long nbr, int base)
 {
@@ -50,7 +49,7 @@ char	*ft_unsigned_itoa(unsigned long long nbr, int base)
 	return (str);
 }
 
-int	ft_write_right_left(int width, int minus, int zero)
+int		ft_write_right_left(int width, int minus, int zero)
 {
 	int	count;
 
@@ -65,4 +64,20 @@ int	ft_write_right_left(int width, int minus, int zero)
 		count++;
 	}
 	return (count);
+}
+
+int		ft_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+char	*ft_str_tolower(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		str[i] = ft_tolower(str[i]);
+	return (str);
 }

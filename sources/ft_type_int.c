@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_view_int.c                                      :+:      :+:    :+:   */
+/*   ft_type_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chnikia <chnikia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: chnikia <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 21:45:37 by chnikia           #+#    #+#             */
-/*   Updated: 2020/07/17 20:39:07 by chnikia          ###   ########.fr       */
+/*   Updated: 2020/07/20 22:55:35 by chnikia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ static int	ft_put_int(char *nbr_str, int nbr_tmp, t_flags flags)
 
 	count = 0;
 	if (flags.minus == 1)
+		{
+		flags.zero = 0;
 		count += ft_output_int(nbr_str, nbr_tmp, flags, len);
+		}
 	if (flags.dot >= 0 && (size_t)flags.dot < len)
 		flags.dot = len;
 	if (flags.dot >= 0)
@@ -55,7 +58,7 @@ static void	check_zero(t_flags *flags)
 	flags->width--;
 }
 
-int			ft_view_int(int nbr, t_flags flags)
+int			ft_type_int(int nbr, t_flags flags)
 {
 	char	*nbr_str;
 	int		nbr_tmp;
@@ -67,7 +70,7 @@ int			ft_view_int(int nbr, t_flags flags)
 	nbr_long = 0;
 	if (flags.dot == 0 && nbr == 0)
 		return ((count += ft_write_right_left(flags.width, 0, 0)));
-	if (nbr < 0 && (flags.dot >= 0 || flags.zero == 1))
+	if (nbr < 0 && (flags.dot >=  0|| flags.zero == 1))
 	{
 		check_zero(&flags);
 		nbr *= -1;
